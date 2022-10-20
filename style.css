@@ -1,0 +1,98 @@
+body{
+    font-family: "Monserrat", sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("background.jpg") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+body::before{ 
+    content: '';
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(124, 123, 123, .3);
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 500px;
+    height: 270px;
+    background: linear-gradient(-25deg, black, #444, black);
+    border-radius: 15px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 2px 0 black;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 10px 50px -10px black;
+    animation: animatedCard 1s alternate infinite;
+}
+
+.card::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 100%;
+    box-shadow: 0 0 50px 10px rgba(38, 38, 38, .95) inset;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+@keyframes animatedCard { 
+    from { transform: translateY(-20px) }
+}
+
+.card-top svg{
+    transform: rotate(90deg);
+    color: white;
+    width: 50px;
+    height: 50px;
+}
+
+.card-top, 
+.card-bottom{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title{
+    font-size: 1.5rem;
+    z-index: 1;
+}
+
+.card-center{
+    z-index: 1;
+}
+
+.card-center img{ 
+    width: 65px;
+    padding-left: 1.5rem;
+}
+
+.card-bottom-left{
+    gap: .7rem;
+}
+
+.card-bottom-left,
+.card-bottom-right{ 
+    display: flex;
+    flex-direction: column;
+}
+
+.card-number{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+}
